@@ -1,0 +1,12 @@
+mixin phoneNumber(number, white = false)
+	- const textColor = white ? 'color-white' : 'color-black'
+
+	.phone-num
+		if white
+			img.phone-num__icon.color-white(src="./assets/icons/phone.svg")
+		else
+			img.phone-num__icon.color-brand(src="./assets/icons/phone.svg")
+		span.phone-num__num(class=textColor)= number
+
+
+

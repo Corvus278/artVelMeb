@@ -1,0 +1,27 @@
+- const tabContentList = [{name: 'Типы', list: ['Интерьерные кровати', 'Односпальные кровати', 'Двухспальные кровати', 'Подростковые кровати', 'Полуторные кровати',]}, {name: 'Материалы', list: ['Мягкие', 'ДСП и МДФ', 'Металл', 'Массив дерева', 'Сосна',]}, {name: '', list: []}, {name: '', list: []}, {name: '', list: []}, {name: '', list: []},]
+
+.catalogDD
+	//- TABS TOGGLE BUTTONS
+	ul.catalogDD__tab-buttons
+		each tabButton, index in ['Типы кроватей', 'Размеры кроватей', 'Бренды', 'Детские', 'Изголовья', 'Основания и боксы']
+			if index == 0
+				li.catalogDD__tab-button.catalogDD__tab-button--active= tabButton
+			else
+				li.catalogDD__tab-button= tabButton
+
+	//- TABS
+	.catalogDD__tab-container.tab-container
+		- let id = 0
+		while id < 6
+			- const active = id == 0 ? 'tab--active' : ''
+
+			.tab(id=id++, class=active)
+				each col in tabContentList
+					.tab__col.t-col
+						h4.t-col__title= col.name
+						ul.t-col__list
+							each item in col.list
+								li.t-col__list-item= item
+
+
+
