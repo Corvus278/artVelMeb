@@ -12,15 +12,17 @@
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-concat": "^2.6.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-pug": "^5.0.0",
 		"gulp-sass": "^5.1.0",
 		"gulp-uglify": "^3.0.2",
 		"gulp-uglify-es": "^3.0.0",
 		"modern-css-reset": "^1.4.0",
 		"normalize-scss": "^7.0.1",
 		"pngquant-bin": "6.0.1",
-		"sass": "^1.50.0"
+		"sass": "^1.50.0",
+		"gulp-sass-glob": "^1.1.0",
+		"pug-include-glob": "^0.4.3"
 	},
-	"dependencies": {
-		"gulp-pug": "^5.0.0"
-	}
+	"dependencies": {}
 }

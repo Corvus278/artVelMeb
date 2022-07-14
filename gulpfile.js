@@ -6,9 +6,15 @@ const concat = require("gulp-concat");
 
 const uglify = require("gulp-uglify-es").default;
 
+const plumber = require("gulp-plumber");
+
 const pug = require("gulp-pug");
 
+const pugIncludeGlob = require("pug-include-glob");
+
 const sass = require("gulp-sass")(require("sass"));
+
+const sassGlob = require("gulp-sass-glob");
 
 const autoprefixer = require("gulp-autoprefixer");
 
@@ -28,7 +34,17 @@ function browsersync() {
 
 const pugBuild = () => {
 	return src(["src/pug/pages/**/**.pug"])
-		.pipe(pug({ pretty: true }))
+		.pipe(plumber())
+		.pipe(
+			pug({
+				pretty: true,
+				plugins: [
+					pugIncludeGlob({
+						/* options */
+					}),
+				],
+			})
+		)
 		.pipe(dest("dist/"))
 		.pipe(browserSync.stream());
 };
@@ -42,22 +58,25 @@ function scripts() {
 }
 
 function styles() {
-	// outputStyle
-	// Type: String
-	// Default: nested
-	// Values: nested, expanded, compact, compressed
-
-	return src("src/" + "scss" + "/index." + "scss")
-		.pipe(sass())
-		.pipe(concat("index.min.css"))
-		.pipe(
-			autoprefixer({ overrideBrowserlist: ["last 10 versions"], grid: true })
-		)
-		.pipe(
-			cleancss({ level: { 1: { specialComments: 0 } }, format: "beautify" })
-		)
-		.pipe(dest("dist/css/"))
-		.pipe(browserSync.stream());
+	return (
+		src("src/scss/index.scss")
+			// .pipe(plumber())
+			.pipe(sassGlob())
+			.pipe(
+				sass({
+					includePaths: ["./node_modules"],
+				})
+			)
+			.pipe(concat("index.min.css"))
+			.pipe(
+				autoprefixer({ overrideBrowserlist: ["last 10 versions"], grid: true })
+			)
+			.pipe(
+				cleancss({ level: { 1: { specialComments: 0 } }, format: "beautify" })
+			)
+			.pipe(dest("dist/css/"))
+		// .pipe(browserSync.stream())
+	);
 }
 
 async function images() {
@@ -103,7 +122,7 @@ function cleandest() {
 function startWatch() {
 	watch(["src/**/*.js", "!src/**/*.min.js"], scripts);
 
-	watch("src/**/" + "scss" + "/**/*", styles);
+	watch("src/**/" + "scss" + "/**/*", styles).on("change", browserSync.reload);
 
 	watch("src/**/*.pug", pugBuild);
 
@@ -125,10 +144,10 @@ exports.cleanimg = cleanimg;
 exports.build = series(cleandest, pugBuild, styles, scripts, images);
 
 exports.default = parallel(
-	styles,
-	pugBuild,
 	scripts,
-	browsersync,
+	pugBuild,
+	styles,
 	images,
+	browsersync,
 	startWatch
 );
