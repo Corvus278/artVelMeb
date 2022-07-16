@@ -1,0 +1,9 @@
+.phone-num {
+	&__link {
+		display: flex;
+		align-items: baseline;
+		gap: get-spacer(1);
+		font-size: get-font-size(3);
+		font-weight: 600;
+	}
+}

@@ -58,25 +58,23 @@ function scripts() {
 }
 
 function styles() {
-	return (
-		src("src/scss/index.scss")
-			// .pipe(plumber())
-			.pipe(sassGlob())
-			.pipe(
-				sass({
-					includePaths: ["./node_modules"],
-				})
-			)
-			.pipe(concat("index.min.css"))
-			.pipe(
-				autoprefixer({ overrideBrowserlist: ["last 10 versions"], grid: true })
-			)
-			.pipe(
-				cleancss({ level: { 1: { specialComments: 0 } }, format: "beautify" })
-			)
-			.pipe(dest("dist/css/"))
-		// .pipe(browserSync.stream())
-	);
+	return src("src/scss/index.scss")
+		.pipe(plumber())
+		.pipe(sassGlob())
+		.pipe(
+			sass({
+				includePaths: ["./node_modules"],
+			})
+		)
+		.pipe(concat("index.min.css"))
+		.pipe(
+			autoprefixer({ overrideBrowserlist: ["last 10 versions"], grid: true })
+		)
+		.pipe(
+			cleancss({ level: { 1: { specialComments: 0 } }, format: "beautify" })
+		)
+		.pipe(dest("dist/css/"));
+	// .pipe(browserSync.stream())
 }
 
 async function images() {
@@ -147,6 +145,7 @@ exports.default = parallel(
 	scripts,
 	pugBuild,
 	styles,
+	cleanimg,
 	images,
 	browsersync,
 	startWatch

@@ -1,0 +1,9 @@
+mixin modal(id, contentClass = '', mobileOnly = true, closeable = true)
+	//- Active state - modal--active
+	.modal.modal-wrapper(id=id, class=(mobileOnly ? 'mobile-only ' : '') + (closeable ? 'closeable' : ''))
+		.modal__overlay
+		.modal__content(class=contentClass)
+			.modal__close-cont
+				button.modal__close-btn
+					+closeSvg
+			block

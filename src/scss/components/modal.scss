@@ -1,0 +1,69 @@
+.modal {
+	// Hide
+	&:not(&--active) {
+		display: none;
+	}
+
+	&__overlay {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+	}
+
+	&__content {
+		position: absolute;
+		z-index: 10;
+	}
+
+	// &.mobile-only &__content {
+	// 	padding: 10px 10px get-spacer(7) 10px;
+	// }
+
+	// Close btn
+	&__close-cont {
+		display: none;
+	}
+
+	&.closeable &__close-cont {
+		display: flex;
+	}
+
+	&__close-cont {
+		justify-content: flex-end;
+		align-self: flex-end;
+	}
+
+	&__close-btn {
+	}
+
+	// Disable modal feature on desktop
+	@include media-breakpoint-up("header-tablet") {
+		&.mobile-only {
+			display: block;
+		}
+
+		&.mobile-only &__overlay {
+			display: none;
+		}
+
+		&.mobile-only &__content {
+			position: static;
+		}
+
+		&.mobile-only.closeable &__close-cont {
+			display: none;
+		}
+	}
+
+	@include media-breakpoint-down("header-tablet") {
+		&.mobile-only &__content {
+			padding: 10px 10px get-spacer(7) 10px;
+		}
+	}
+}
+
+// #mobile-menu,
+// #catalog-menu,
+// #catalogMore {
+// 	display: none !important;
+// }

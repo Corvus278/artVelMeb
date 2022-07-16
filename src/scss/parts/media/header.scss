@@ -1,0 +1,138 @@
+@include media-breakpoint-down("header-tablet") {
+	.header {
+		padding-top: 5px;
+		padding-bottom: get-spacer(5);
+		background-color: get-theme-color("greyF1");
+		box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+
+		&__top {
+			align-items: center;
+		}
+
+		&__logo {
+			width: 107px;
+			padding-top: 0;
+		}
+
+		&__right {
+			&--mobile {
+				display: flex;
+				gap: get-spacer(2);
+			}
+
+			&-content {
+				top: 0;
+				left: 0;
+				right: 0;
+				// width: 100vw;
+
+				flex-direction: column;
+				gap: 0;
+				align-items: center;
+
+				background-color: get-theme-color("greyF9");
+				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+			}
+
+			&-bottom {
+				width: 100%;
+				flex-direction: column;
+				align-items: center;
+				row-gap: calc(get-spacer(5) + 2px);
+			}
+		}
+
+		&__search {
+			&-block {
+				width: 100%;
+			}
+			width: 100%;
+			padding: 0 calc(get-spacer(4) + 2px);
+		}
+	}
+
+	.cart-btn {
+		display: flex;
+		justify-content: center;
+		width: 55px;
+		padding: 0;
+	}
+
+	.burger-btn {
+		display: grid;
+		place-items: center;
+		width: 51px;
+	}
+
+	// ---------------- NAVIGATION -------------
+	.nav {
+		margin-bottom: 22px;
+
+		&__list {
+			flex-direction: column;
+			row-gap: 5px;
+			align-items: center;
+		}
+
+		&__item {
+			@include remove-right-divider;
+			position: relative;
+		}
+	}
+
+	// ---------------- H-INFO -----------------
+	.h-info {
+		flex-direction: column;
+		align-items: center;
+		row-gap: get-spacer(2);
+	}
+
+	.cart-btn {
+		display: none;
+	}
+
+	// ---------------- CATALOG ----------------
+	.catalog-btn {
+		display: flex;
+	}
+
+	.catalog-btn {
+		align-items: baseline;
+		font-weight: 500;
+	}
+
+	// ---------------- CATALOG MODAL -----------
+	.h-catalog {
+		&__wrapper {
+			top: 0;
+			left: 0;
+			right: 0;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			row-gap: calc(get-spacer(6) + 2px);
+
+			background-color: get-theme-color("white");
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+		}
+
+		&__list {
+			flex-direction: column;
+			align-items: center;
+			row-gap: calc(get-spacer(6) + 2px);
+		}
+
+		&__item {
+			@include remove-right-divider;
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	// --------------- CATALOG MORE --------------
+	.catalogDD {
+		display: none;
+	}
+}

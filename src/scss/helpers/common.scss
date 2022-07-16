@@ -1,0 +1,10 @@
+.color {
+	&-brand {
+		color: get-theme-color("brand");
+	}
+}
+
+.center-cont {
+	display: flex;
+	justify-content: center;
+}

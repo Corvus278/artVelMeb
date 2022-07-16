@@ -1,0 +1,90 @@
+// ---------------- CATALOG MORE -------------
+.modal[id="catalog-more"] {
+	position: relative;
+}
+
+.catalogDD {
+	position: absolute;
+	display: flex;
+	column-gap: get-spacer(5);
+	top: 100%;
+	left: 0;
+	right: 0;
+
+	padding-top: get-spacer(6);
+	padding-bottom: get-spacer(3);
+
+	background-color: get-theme-color("white");
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+	&__wrapper {
+		position: relative;
+		width: 100%;
+	}
+
+	// Tabs
+	&__tab {
+		// Switch tabs buttons
+		&-buttons {
+			display: flex;
+			flex-direction: column;
+			row-gap: calc(get-spacer(1) + 2px);
+
+			font-size: get-font-size(3);
+			font-weight: 600;
+			line-height: 1.38em;
+		}
+
+		&-button {
+			padding: get-spacer(1) get-spacer(2) calc(get-spacer(1) + 2px);
+
+			background-color: get-theme-color("greyF5");
+			border-right: 3px solid get-theme-color("white");
+			cursor: pointer;
+
+			&--active {
+				border-color: get-theme-color("action");
+				color: get-theme-color("brand");
+			}
+		}
+
+		// Container with tab content
+		&-container {
+			display: flex;
+			padding-top: get-spacer(1);
+		}
+	}
+}
+
+// Tab
+.tab {
+	&:not(&--active) {
+		display: none;
+	}
+
+	display: flex;
+	gap: calc(get-spacer(7) + 2px);
+
+	padding-right: get-spacer(6);
+
+	&__col {
+		&:nth-child(4) {
+			max-width: 102px;
+		}
+	}
+}
+
+.t-col {
+	&__title {
+		margin-bottom: get-spacer(3);
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: get-spacer(3);
+		font-size: get-font-size(3);
+		// line-height: 1.85em;
+		font-weight: 500;
+		color: get-theme-color("grey83");
+	}
+}

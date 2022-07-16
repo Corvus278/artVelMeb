@@ -6,50 +6,55 @@ heder.header
 
 		//- HEADER RIGHT
 		.header__right.mobile-menu
-			//- NAVIGATION
-			nav.header__nav.nav
-				ul.nav__list
-					each item in menuList
-						li.nav__item= item
+			+modal(modals.mobileMenu.id, 'header__right-content')
+				//- NAVIGATION
+				nav.header__nav.nav
+					ul.nav__list
+						each item in menuList
+							li.nav__item
+								a.nav__item-link(href="/")= item
 
-			//- INFO BLOCK
-			.header__info.h-info
-				.h-info__number1
-					+phoneNumber(phoneNumber1)
-				.h-info__number2
-					+phoneNumber(phoneNumber2)
-				.h-info__work-time.work-time
-					img.work-time__ico(src=icoSrc + "clock.svg")
-					span.work-time__text= 'Eжедневно с ' + timeFromWork + ' до ' + timeToWork
+				.header__right-bottom
+					//- INFO BLOCK
+					.header__info.h-info
+						.h-info__number1
+							+phoneNumber(phoneNumber1)
+						.h-info__number2
+							+phoneNumber(phoneNumber2)
+						.h-info__work-time.work-time
+							img.work-time__ico(src=icoSrc + "clock.svg")
+							span.work-time__text= 'Eжедневно с ' + timeFromWork + ' до ' + timeToWork
 
-			//- SEARCH BLOCK
-			.header__search-block
-				.header__search
-					+search('Поиск мебели')
-				a.cart-btn.btn.btn-acent.btn-oval(href='./cart')
-					img.cart-btn__ico(src=icoSrc + "cart.svg")
-					span 3 товара <br> На 124 601 ₽
+					//- SEARCH BLOCK
+					.header__search-block
+						.header__search
+							+search('Поиск мебели')
+						a.cart-btn.btn.btn-acent.btn-oval(href='./cart')
+							img.cart-btn__ico(src=icoSrc + "cart.svg")
+							span 3 товара <br> На 124 601 ₽
 
 		//- HEADER RIGHT - MOBILE
 		.header__right.header__right--mobile
 			a.cart-btn.cart-btn--mobile.btn.btn-acent.btn-oval.btn-ico
 				img.cart-btn__ico(src=icoSrc + 'cart.svg')
-			a.burger-btn.burger-btn--mobile.btn.btn-success .btn-oval.btn-ico
+			a.burger-btn.burger-btn--mobile.btn.btn-success.btn-oval.btn-ico
 				img.burger-btn__ico(src=icoSrc + 'burger.svg')
 
 	//- CATALOG MENU
 	.header__catalog.h-catalog
 		.container.container--catalog
-			.h-catalog__wrapper.mobile-menu
+			+modal(modals.catalogMenu.id, 'h-catalog__wrapper')
 				ul.h-catalog__list
 					each item in catalogList
 						li.h-catalog__item
 							img.h-catalog__item-ico(src=item.icon)
-							span.h-catalog__text=item.name
-				button.h-catalog_acent-btn.btn.action-btn Распродажа
+							a.h-catalog__item-link(href='/')=item.name
+				button.h-catalog__acent-btn.btn.btn-action.btn-oval
+					span Распродажа
 
 			//- CATALOG DROP DOWN
-			.catalog-DD__wrapper
+			//- +modal(modals.catalogMore.id, 'catalogDD__wrapper', false, false)
+			.h-catalog__dropdown
 				include ../parts/catalogDropDown
 
 			//- CATALOG BUTTON - MOBILE

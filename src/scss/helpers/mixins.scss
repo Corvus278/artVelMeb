@@ -1,0 +1,81 @@
+@mixin media-breakpoint-down($key) {
+	$max: map-get($breakpoints, $key);
+
+	@media (max-width: ($max - 1)) {
+		@content;
+	}
+}
+
+@mixin media-breakpoint-up($key) {
+	$min: map-get($breakpoints, $key);
+
+	@media (min-width: $min) {
+		@content;
+	}
+}
+
+@mixin btn-box-shadow($color) {
+	$shadow-color: get-shadow-color($color);
+
+	box-shadow: 0px 4px 4px $shadow-color;
+}
+
+@mixin right-divider($paddingLeft, $paddingRight, $div-width: 1px) {
+	&:not(:first-child) {
+		padding-left: $paddingLeft;
+	}
+
+	&:not(:last-child) {
+		position: relative;
+		padding-right: $paddingRight;
+		// border-right: $div-width solid transparent;
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: $div-width * -1;
+			top: 50%;
+			transform: translateY(-50%);
+			width: $div-width;
+			background-color: get-theme-color("black");
+			height: calc(1em + 1px);
+		}
+
+		@content;
+	}
+}
+
+@mixin remove-right-divider {
+	&:not(:first-child) {
+		padding-left: initial;
+	}
+
+	&:not(:last-child) {
+		padding-right: initial;
+		// border-right: $div-width solid transparent;
+
+		&::after {
+			content: "";
+			position: static;
+			right: initial;
+			top: initial;
+			transform: initial;
+			width: initial;
+			background-color: initial;
+			height: initial;
+		}
+
+		@content;
+	}
+}
+
+@mixin shrink-after {
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+}

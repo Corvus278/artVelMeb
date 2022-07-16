@@ -1,0 +1,85 @@
+.btn {
+	background-color: currentColor;
+	border: 1px solid;
+	padding: calc(get-spacer(2) - 2px) get-spacer(4);
+	cursor: pointer;
+	line-height: 1.2em;
+
+	& span {
+		color: get-theme-color("white");
+	}
+
+	// Variants
+	&-ico {
+		display: flex;
+		align-items: center;
+		gap: get-spacer(1);
+	}
+
+	&-oval {
+		border-radius: 16px;
+		// position: relative;
+		// padding-left: 1px;
+		// padding-right: 1px;
+		// z-index: 1;
+
+		// &::before {
+		// 	content: "";
+		// 	position: absolute;
+		// 	height: calc(100% + 2px);
+		// 	top: -1px;
+		// 	right: 100%;
+		// 	transform: translateX(50%);
+		// 	aspect-ratio: 1;
+		// 	z-index: -1;
+		// 	border: 1px solid;
+		// 	border-radius: 50%;
+		// 	background-color: inherit;
+		// 	box-shadow: inherit;
+		// }
+
+		// &::after {
+		// 	content: "";
+		// 	position: absolute;
+		// 	height: calc(100% + 2px);
+		// 	top: -1px;
+		// 	left: 100%;
+		// 	transform: translateX(-50%);
+		// 	aspect-ratio: 1;
+		// 	z-index: -1;
+		// 	border: 1px solid;
+		// 	border-radius: 50%;
+		// 	background-color: inherit;
+		// 	box-shadow: inherit;
+		// }
+	}
+
+	// Colors
+	&-brand {
+		color: get-theme-color("brand");
+		@include btn-box-shadow("brand");
+	}
+
+	&-action {
+		color: get-theme-color("action");
+		@include btn-box-shadow("action");
+	}
+
+	&-success {
+		color: get-theme-color("success");
+		@include btn-box-shadow("success");
+	}
+
+	&-acent {
+		color: get-theme-color("acent");
+		@include btn-box-shadow("acent");
+	}
+
+	&-bordered {
+		background-color: transparent;
+
+		& span {
+			color: inherit;
+		}
+	}
+}

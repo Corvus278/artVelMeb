@@ -1,0 +1,160 @@
+.header {
+	padding-top: get-spacer(3);
+	background-color: get-theme-color("greyF9");
+	box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
+
+	&__top {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding-bottom: 17px;
+	}
+
+	&__logo {
+		padding-top: 4px;
+	}
+
+	&__right {
+		display: flex;
+		justify-content: space-between;
+
+		&-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: calc(get-spacer(8) + 2px);
+		}
+
+		&-bottom {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&--mobile {
+			display: none;
+		}
+	}
+
+	&__search-block {
+		display: flex;
+		align-items: center;
+		gap: get-spacer(6);
+	}
+
+	&__search {
+		width: 303px;
+	}
+}
+
+.nav {
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		position: relative;
+		font-size: get-font-size(3);
+
+		@include right-divider(
+			calc(get-spacer(3) + 2px),
+			calc(get-spacer(5) + 1px)
+		);
+
+		&-link {
+			@include shrink-after;
+		}
+	}
+}
+
+.h-info {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: calc(get-spacer(2) - 2px);
+	column-gap: get-spacer(3);
+	max-width: 383px;
+}
+
+.work-time {
+	display: flex;
+	align-items: center;
+	gap: get-spacer(1);
+}
+
+.cart-btn {
+	display: flex;
+	align-items: center;
+	gap: get-spacer(3);
+	height: 34px;
+	padding: 1px calc(get-spacer(4) + 2px);
+	font-size: get-font-size(0.25);
+}
+
+// ---------------- CATALOG ---------------------
+
+// .container--catalog {
+// 	position: relative;
+// }
+
+.h-catalog {
+	background-color: get-theme-color("greyF1");
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: get-spacer(2);
+		justify-content: space-between;
+		// gap: get-spacer(5);
+		align-items: center;
+		padding: get-spacer(2);
+		padding-left: calc(get-spacer(6) + 2px);
+		padding-right: get-spacer(4);
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		@include right-divider(get-spacer(5), get-spacer(5), 2px);
+
+		position: relative;
+		display: flex;
+		gap: calc(get-spacer(1) + 2px);
+		align-items: center;
+
+		border: none;
+
+		font-size: get-font-size(4);
+		font-weight: 500;
+
+		&-link {
+			@include shrink-after;
+		}
+	}
+
+	&__acent-btn {
+		padding-left: calc(get-spacer(4) - 2px);
+		padding-right: calc(get-spacer(4) - 2px);
+		border-radius: 1em;
+		font-size: get-font-size(4);
+	}
+
+	// Deopdown container
+	&__dropdown {
+		position: relative;
+		width: 100%;
+
+		// Hidden
+		display: none;
+	}
+}
+
+.catalog-btn {
+	display: none;
+}
+
+// Show dropdown
+.container--catalog:hover .h-catalog__dropdown {
+	display: block;
+}
