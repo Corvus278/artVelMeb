@@ -1,0 +1,11 @@
+mixin slider(pagination = true, controlBtns = true)
+	.swiper&attributes(attributes)
+		.swiper-wrapper
+			block
+
+		if pagination
+			.swiper-pagination(class!=attributes.class + '__pagination')
+
+		if controlBtns
+			.swiper-button-prev(class!=attributes.class + '__control')
+			.swiper-button-next(class!=attributes.class + '__control')

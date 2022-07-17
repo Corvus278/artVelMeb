@@ -4,3 +4,13 @@
 	padding-left: $container-padding;
 	margin: 0 auto;
 }
+
+.section {
+	padding: 27px 0;
+
+	&--main {
+		&-first {
+			padding-top: get-spacer(7);
+		}
+	}
+}

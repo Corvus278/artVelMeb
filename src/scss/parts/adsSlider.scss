@@ -1,0 +1,106 @@
+$swiper-padding-bottom: calc(get-spacer(10) + 4px);
+$swiper-controls-x-padding: 22px;
+
+// Swiper controls change
+:root {
+	--swiper-navigation-size: 48px;
+}
+
+.ads-slider {
+	padding-bottom: $swiper-padding-bottom;
+}
+
+// ---------- SWIPER STYLES -------------
+.ads-slider {
+	// Controls
+	&__control {
+		width: var(--swiper-navigation-size);
+
+		margin-top: 0;
+		transform: translateY(calc(($swiper-padding-bottom * -1)));
+
+		background: rgba(255, 255, 255, 0.15);
+		backdrop-filter: blur(6px);
+
+		border: 1px solid;
+		border-radius: 50%;
+
+		color: get-theme-color("white");
+
+		&::after {
+			font-size: 27px;
+		}
+	}
+
+	// Pugination
+	&__pagination {
+		bottom: 0 !important;
+
+		& .swiper-pagination-bullet {
+			width: 10px;
+			height: 10px;
+			margin: 0 5px !important;
+
+			background-color: get-theme-color("greyD9");
+			opacity: 1;
+
+			&-active {
+				background-color: get-theme-color("black");
+			}
+		}
+	}
+}
+
+.swiper-button-prev {
+	left: $swiper-controls-x-padding;
+}
+
+.swiper-button-next {
+	right: $swiper-controls-x-padding;
+}
+
+// ---------------- SLIDER CONTENT --------------
+.ads-slider__slide {
+	display: grid;
+	height: 345px;
+	padding: 0 get-spacer(7);
+
+	place-items: center;
+
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.ads-slide {
+	&__content {
+		display: flex;
+		padding: get-spacer(5) 58px;
+
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		background: rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(6px);
+
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		border-radius: 24px;
+	}
+
+	&__text {
+		margin-bottom: 1rem;
+
+		font-size: 30px;
+		font-weight: 500;
+	}
+
+	&__link {
+		min-width: 190px;
+		font-size: 20px;
+
+		border-radius: 30px;
+	}
+}

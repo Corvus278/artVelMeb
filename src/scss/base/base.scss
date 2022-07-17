@@ -68,8 +68,16 @@ img {
 
 	vertical-align: middle;
 }
+h1,
+h2,
+h3,
+h4 {
+	margin-top: 0;
+}
 
 h2 {
+	margin-bottom: 1rem;
+
 	font-size: 30px;
 	font-weight: 700;
 	line-height: 1.2em;

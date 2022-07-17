@@ -1,0 +1,27 @@
+@include media-breakpoint-down("tablet") {
+	// -------------- SWIPER -------------
+	.ads-slider {
+		&__control {
+			display: none;
+		}
+	}
+
+	// ------------ CONTENT -------------
+	.ads-slide {
+		&__content {
+			padding: 20px;
+			padding-top: 26px;
+		}
+
+		&__title {
+			margin-bottom: 40px;
+
+			font-size: 25px;
+		}
+
+		&__text {
+			margin-bottom: 45px;
+			font-size: 1rem;
+		}
+	}
+}

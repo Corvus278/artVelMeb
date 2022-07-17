@@ -1,4 +1,7 @@
 .btn {
+	display: grid;
+	place-items: center;
+
 	background-color: currentColor;
 	border: 1px solid;
 	padding: calc(get-spacer(2) - 2px) get-spacer(4);

@@ -50,12 +50,25 @@ const pugBuild = () => {
 };
 
 function scripts() {
-	return src(["src/js/index.js"])
+	return src(["src/js/*.js"])
 		.pipe(concat("index.min.js"))
 		.pipe(uglify())
 		.pipe(dest("dist/js/"))
 		.pipe(browserSync.stream());
 }
+
+const assetsScripts = () => {
+	return src(["src/js/assets/*.js"])
+		.pipe(dest("dist/js/assets/"))
+		.pipe(browserSync.stream());
+};
+
+const modulesScripts = () => {
+	return src(["src/js/modules/*.js"])
+		.pipe(uglify())
+		.pipe(dest("dist/js/modules/"))
+		.pipe(browserSync.stream());
+};
 
 function styles() {
 	return src("src/scss/index.scss")
@@ -118,7 +131,11 @@ function cleandest() {
 }
 
 function startWatch() {
-	watch(["src/**/*.js", "!src/**/*.min.js"], scripts);
+	watch("src/js/**/*.js", () => {
+		scripts();
+		assetsScripts();
+		modulesScripts();
+	});
 
 	watch("src/**/" + "scss" + "/**/*", styles).on("change", browserSync.reload);
 
@@ -142,9 +159,11 @@ exports.cleanimg = cleanimg;
 exports.build = series(cleandest, pugBuild, styles, scripts, images);
 
 exports.default = parallel(
-	scripts,
 	pugBuild,
 	styles,
+	assetsScripts,
+	modulesScripts,
+	scripts,
 	cleanimg,
 	images,
 	browsersync,

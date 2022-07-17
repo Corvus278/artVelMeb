@@ -1,0 +1,13 @@
+- const slides = [{title: 'Заголовок баннера', text: 'Какой-то текст про акцию в 10%', img: '.' + imgSrc + 'banner-slider.jpg'}, {title: 'Заголовок баннера', text: 'Какой-то текст про акцию в 10%', img: imgSrc + 'banner-slider.jpg'}, {title: 'Заголовок баннера', text: 'Какой-то текст про акцию в 10%', img: imgSrc + 'banner-slider.jpg'}]
+
++slider()(class='ads-slider', id='ads-slider')
+	each slide in slides
+		.swiper-slide.ads-slider__slide.ads-slide(style=`background-image: url(${slide.img})`)
+			.ads-slide__content
+				h2.ads-slide__title.color-brand= slide.title
+				p.ads-slide__text= slide.text
+				a.ads-slide__link.btn.btn-action.btn-oval(href='/')
+					span Перейти
+
+
+
