@@ -1,0 +1,112 @@
+.categories {
+	&__wrapper {
+		display: flex;
+		// flex-wrap: wrap;
+		gap: get-spacer(4);
+		justify-content: space-between;
+	}
+}
+
+// ------------- CATALOG -----------
+.catalog-list {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	column-gap: get-spacer(4);
+	grid-auto-rows: minmax(206px, auto);
+	row-gap: calc(get-spacer(3) + 2px);
+}
+
+.catalog-card {
+	padding: 10px 12px;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+
+	// Layout
+	&--big:first-child {
+		grid-column: 1/3;
+	}
+
+	&--big:nth-child(2) {
+		grid-column: 3/5;
+	}
+
+	&--action {
+		grid-column: 5/6;
+		grid-row: 1/3;
+	}
+
+	// Cards
+	&--big {
+		display: flex;
+		flex-direction: row;
+		gap: 8px;
+		justify-content: space-between;
+	}
+
+	&--big &__img {
+		max-width: 277px;
+	}
+
+	&--big &__title {
+		align-self: flex-start;
+	}
+
+	&--small &__img {
+		margin-top: auto;
+		margin-bottom: auto;
+		max-height: 154px;
+		align-self: flex-end;
+	}
+
+	&__title {
+		margin-bottom: get-spacer(2);
+	}
+
+	&__content {
+		display: flex;
+		align-self: stretch;
+		height: fill;
+
+		justify-content: space-between;
+		gap: get-spacer(1);
+	}
+
+	&__desc-list {
+		color: get-theme-color("grey83");
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 1.38em;
+	}
+
+	&__img {
+		max-height: 186px;
+		align-self: center;
+	}
+
+	// Acent card
+	&--action {
+		justify-content: flex-end;
+		gap: 15px;
+		padding-right: 0;
+		align-items: center;
+	}
+
+	&--action & {
+		&__pic {
+			height: 100%;
+		}
+
+		&__img {
+			max-height: none;
+		}
+
+		&__action-btn {
+			width: 100%;
+			margin-right: 12px;
+
+			font-size: 25px;
+			font-weight: 500;
+		}
+	}
+}

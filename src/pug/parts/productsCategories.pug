@@ -1,0 +1,22 @@
+.categories
+	h2.categories__title Категории товаров
+
+	.categories__wrapper
+		ul.categories__catalog-list.catalog-list
+			each category in catalogList
+				li.catalog-list__item.catalog-card.shadow-force.card-rounded(class=(category.descList ? 'catalog-card--big' : 'catalog-card--small'))
+					.catalog-card__text-cont
+						h3.catalog-card__title= category.name
+						if category.descList
+							ul.catalog-card__desc.list-mark
+								each item in category.descList
+									li.catalog-card__desc-list= item
+					img.catalog-card__img(src=replaceIcoToImg(category.icon, 'png'))
+
+			.catalog-card.shadow-force.card-rounded.catalog-card--action
+				picture.catalog-card__pic
+					source(srcset=imgSrc + 'sale-mobile.png' media='(max-width: 767px)')
+					img.catalog-card__img(src=imgSrc + 'sale.png')
+				a.catalog-card__action-btn.btn.btn-action
+					span Распродажа
+
