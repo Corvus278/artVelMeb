@@ -1,0 +1,26 @@
+- const types = {hit: {title: 'Хит', color: 'action'}, sale: {title: 'Sale', color: 'acent'}, new: {title: 'New', color: 'success'},}
+//- type - hit, sale, new
+mixin productCard(card, type = null, full = false)
+	.product-card.product-card--lite.card-rounded.shadow
+		if type
+			.product-card__type(class='product-card__type--' + type)
+				span= types[type].title
+
+		.product-card__header
+			h3.product-card__title= card.name
+			span.product-card__subtitle= card.category
+
+		img.product-card__img(src=imgSrc + 'bed-product.jpg')
+
+		.product-card__price-cont
+			span.product-card__price.color-brand= card.price
+			span.product-card__price-full= card.salePrice
+
+		if !full
+			.product-card__action-btns.centr-cont
+				a.product-card__more-btn.btn.btn-action.btn-oval
+					span Подробнее
+				a.product-card__cart-btn.btn.btn-brand.btn-oval
+					img.product-card__cart-btn-ico(src=icoSrc + 'cart.svg')
+					span В корзину
+

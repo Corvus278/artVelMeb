@@ -1,0 +1,11 @@
+- const advs = [{title: 'Гарантия <br> 12 месяцев', ico: 'like'}, {title: '100% <br> Эко мебель', ico: 'eco'}, {title: '100% <br> Массив сосны', ico: 'pine'}, {title: 'Мебель от \n производителя', ico: 'factory'},]
+
+.why-we
+	h2.why-we__title Почему выбирают нас
+
+	ul.why-we__advantages-list
+		each adv in advs
+			li.why-we__advantages-item.advantage
+				.advantage__img-wrapper
+					img.advantage__img(src=imgSrc + adv.ico + '.png')
+				span.advantage__text !{adv.title}

@@ -1,0 +1,119 @@
+.product-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: calc(get-spacer(4) - 2px) 1rem;
+
+	&__type {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		padding: get-spacer(2);
+		min-width: 78px;
+
+		display: flex;
+		justify-content: center;
+
+		border-radius: 8px;
+		box-shadow: 0px 2px 2px currentColor;
+
+		& span {
+			color: #fff;
+			font-weight: 500;
+		}
+
+		&--hit {
+			background-color: get-theme-color("action");
+			color: rgba(255, 168, 0, 0.25);
+		}
+
+		&--sale {
+			background-color: get-theme-color("acent");
+			color: rgba(182, 6, 112, 0.25);
+		}
+
+		&--new {
+			background-color: get-theme-color("success");
+			color: rgba(31, 182, 6, 0.25);
+		}
+	}
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		margin-bottom: 0;
+		font-weight: 700;
+		font-size: 18px;
+	}
+
+	&__subtitle {
+		font-size: 1rem;
+		font-weight: 500;
+		color: get-theme-color("grey83");
+	}
+
+	&__img {
+		max-height: 191px;
+		align-self: center;
+	}
+
+	&__price {
+		font-size: 25px;
+		font-weight: 700;
+
+		&-cont {
+			display: grid;
+			justify-items: center;
+		}
+
+		&-full {
+			color: get-theme-color("grey83");
+			text-decoration: line-through;
+		}
+	}
+
+	&__action-btns {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: calc(get-spacer(4) - 2px);
+	}
+
+	&__more-btn {
+		min-width: 217px;
+		font-size: 20px;
+		font-weight: 600;
+		border-radius: 30px;
+	}
+
+	&__cart-btn {
+		flex-direction: row;
+		align-items: center;
+		gap: 6px;
+
+		& span {
+			font-size: 17px;
+		}
+	}
+
+	// Lite card only
+	&--lite & {
+		&__header {
+			margin-bottom: calc(get-spacer(4) - 2px);
+		}
+
+		&__img {
+			margin-bottom: calc(get-spacer(4) - 2px);
+		}
+
+		&__price-cont {
+			justify-content: center;
+			gap: get-spacer(1);
+			margin-bottom: calc(get-spacer(4) - 2px);
+		}
+	}
+}

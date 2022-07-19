@@ -5,6 +5,7 @@
 @import "base/**/*.scss";
 @import "helpers/common.scss";
 @import "layout/**/*.scss";
-@import "components/**/*.scss";
+@import "components/*.scss";
+@import "components/media/**/*.scss";
 @import "parts/*.scss";
 @import "parts/media/**/*.scss";

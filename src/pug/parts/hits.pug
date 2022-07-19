@@ -1,0 +1,8 @@
++sliderList('Хиты продаж')(class='products-hits')
+	- let count = 12
+	while count > 0
+		.swiper-slide.products-hits__slide
+			+productCard(product, 'hit')
+
+		- count--
+

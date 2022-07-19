@@ -6,7 +6,8 @@
 
 .center-cont {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 .shadow {
@@ -20,6 +21,10 @@
 .card {
 	&-rounded {
 		border-radius: 8px;
+
+		@include media-breakpoint-down("tablet") {
+			border-radius: 6px;
+		}
 	}
 }
 

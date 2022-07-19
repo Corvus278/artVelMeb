@@ -25,6 +25,10 @@ input {
 	font-size: inherit;
 }
 
+span {
+	line-height: 1.2em;
+}
+
 a {
 	display: inline-block;
 	text-decoration: none;
@@ -33,12 +37,13 @@ a {
 }
 
 button {
-	padding: none;
+	padding: 0;
 	border: none;
 	border-radius: 0;
 	background-color: transparent;
 	font-size: inherit;
 	font-family: inherit;
+	cursor: pointer;
 }
 
 html {

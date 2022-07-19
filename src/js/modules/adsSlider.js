@@ -1,4 +1,4 @@
-const adsSlider = new Swiper(".swiper", {
+const adsSlider = new Swiper(".ads-slider", {
 	// Optional parameters
 	loop: true,
 

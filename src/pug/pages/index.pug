@@ -3,6 +3,7 @@ extends ../layout/base.pug
 prepend scripts
 	script(src=swiperSrc)
 	script(src=modulesScriptsSrc + 'adsSlider.js', defer)
+	script(src=modulesScriptsSrc + 'slidersList.js', defer)
 
 block content
 	main.main-page
@@ -15,3 +16,13 @@ block content
 		section.section.section--main
 			.container
 				include ../parts/productsCategories
+
+		//- Why we
+		section.section.section--main
+			.container
+				include ../parts/whyWe.pug
+
+		//- Hits
+		section.section.section--main
+			.container
+				include ../parts/hits.pug

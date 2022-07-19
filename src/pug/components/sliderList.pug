@@ -1,0 +1,15 @@
+mixin sliderList(title = 'Товары', pagination = true)
+	.swiper.slider-list&attributes(attributes)
+		.slider-list__header
+			h2.slider-list__title= title
+			.slider-list__control-cont
+				button.slider-list__control.slider-list__control--prev
+					span.slider-list__control-arrow
+				button.slider-list__control.slider-list__control--next
+					span.slider-list__control-arrow
+
+		.swiper-wrapper
+			block
+
+		if pagination
+			.swiper-pagination(class!=attributes.class + '__pagination')

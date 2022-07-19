@@ -1,0 +1,72 @@
+@include media-breakpoint-down("tablet") {
+	.product-card {
+		padding: get-spacer(2);
+
+		&__type {
+			padding: 4px;
+			min-width: 45px;
+
+			font-size: 9px;
+
+			border-radius: 4px;
+		}
+
+		&__title {
+			font-size: 10px;
+		}
+
+		&__subtitle {
+			font-size: 10px;
+		}
+
+		&__img {
+			max-height: 113px;
+		}
+
+		&__price {
+			font-size: 14px;
+
+			&-full {
+				font-size: 10px;
+			}
+		}
+
+		&__action-btns {
+			gap: 6px;
+		}
+
+		&__more-btn {
+			min-width: 127px;
+			font-size: 12px;
+			padding: 4px;
+		}
+
+		&__cart-btn {
+			min-width: 127px;
+			padding: 4px 8px;
+			min-width: auto;
+
+			& img {
+				max-height: 10px;
+			}
+
+			& span {
+				font-size: 10px;
+			}
+		}
+
+		&--lite & {
+			&__header {
+				margin-bottom: 6px;
+			}
+
+			&__img {
+				margin-bottom: 6px;
+			}
+
+			&__price-cont {
+				margin-bottom: 6px;
+			}
+		}
+	}
+}

@@ -1,6 +1,6 @@
 .btn {
-	display: grid;
-	place-items: center;
+	display: flex;
+	justify-content: center;
 
 	background-color: currentColor;
 	border: 1px solid;

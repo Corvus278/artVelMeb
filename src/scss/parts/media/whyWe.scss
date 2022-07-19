@@ -1,0 +1,32 @@
+@include media-breakpoint-down("tablet") {
+	.why-we {
+		text-align: left;
+
+		&__title {
+			margin-bottom: 44px;
+		}
+
+		&__advantages-list {
+			grid-template-columns: repeat(4, calc(25% - 21px));
+			column-gap: 28px;
+		}
+	}
+
+	.advantage {
+		text-align: center;
+
+		&:nth-child(even) {
+			padding-top: 30px;
+		}
+
+		&__text {
+			font-size: 10px;
+		}
+
+		// Road
+		// &:not(:last-child) &__img-wrapper::after {
+		// 	width: 33px;
+		// 	top: 39%;
+		// }
+	}
+}

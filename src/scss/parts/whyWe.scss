@@ -1,0 +1,68 @@
+.why-we {
+	max-width: 870px;
+	margin: 0 auto;
+	text-align: center;
+
+	&__title {
+		margin-bottom: 47px;
+	}
+
+	&__advantages-list {
+		display: grid;
+		grid-template-columns: repeat(4, calc(25% - 53px));
+		column-gap: 70px;
+	}
+}
+
+.advantage {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: get-spacer(2);
+	align-items: center;
+
+	&:nth-child(even) {
+		padding-top: 78px;
+		align-self: flex-end;
+	}
+
+	&__text {
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	// &__img {
+	// 	border-radius: 50%;
+	// 	background-color: #fff;
+	// }
+
+	// Road
+	&__img-wrapper {
+		background-color: #fff;
+		border-radius: 50%;
+	}
+
+	&:not(:last-child) &__img-wrapper {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+
+			left: 96%;
+			top: 66%;
+			width: 85px;
+			z-index: -1;
+
+			transform-origin: left center;
+			transform: rotate(22.93deg);
+			border: 1px dashed get-theme-color("greyD9");
+		}
+	}
+
+	&:nth-child(even) &__img-wrapper::after {
+		left: 100%;
+		top: 40%;
+		transform: rotate(-23deg);
+	}
+}
