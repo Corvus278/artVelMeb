@@ -1,0 +1,32 @@
+@include media-breakpoint-down("tablet") {
+	.contact-form {
+		grid-template-columns: 100%;
+
+		&__input {
+			padding-right: 1rem;
+			padding-left: 1rem;
+		}
+
+		&__input {
+			&[name="message"] {
+				grid-column: 1/2;
+				grid-row: auto;
+				height: 80px;
+			}
+		}
+
+		&__submit {
+			width: 237px;
+			justify-self: center;
+		}
+
+		&__submit,
+		&__offer-text {
+			margin-top: 0px;
+		}
+
+		&__offer-text {
+			text-align: center;
+		}
+	}
+}

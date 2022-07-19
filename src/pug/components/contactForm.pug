@@ -1,0 +1,9 @@
+mixin contactForm()
+	form.contact-form(action="")
+		input.contact-form__input(name='name' type='text' placeholder='Имя' required)
+		input.contact-form__input(name='surname' type='text' placeholder='Фамилия' required)
+		textarea.contact-form__input(name='message' type='textarea' placeholder='Ваше сообщение' required)
+
+		button.contact-form__submit.btn.btn-brand.btn-oval
+			span Отправить
+		p.contact-form__offer-text Нажимая на кнопку “Отправить”, вы соглашаетесь на обработку персональных данных

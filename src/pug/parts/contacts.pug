@@ -1,0 +1,28 @@
+.contacts
+	h2.contacts__title Любая наша мебель - и мягкая и корпусная, может быть изготовлена в разных размерах и цветах. Обращайтесь, мы поможем с выбором!
+	.contacts__content
+		.contacts__block-phones.contacts-phones
+			h3.contacts__block-title= 'Звоните ежедневно '
+				span.color-brand с 10:00 до 22:00
+			.contacts-phones__phones
+				+phoneNumber('8 (925) 549-38-70')
+				+phoneNumber('8 (499) 391-20-73')
+
+		.contacts__block-messagers.contacts-messagers
+			h3.contacts__block-title.contacts-messagers__title= 'Пишите в '
+				span.color-success= 'WhatsApp '
+				span= 'и '
+				span.color-brand= 'Telegram '
+				span круглосуточно
+			.contacts-messagers__links.messagers-links
+				a.messagers-links__link.messagers-links__link--wp.btn.btn-oval.btn-bordered.btn-success.btn-ico
+					img.messagers-links__icon(src=icoSrc + 'wp.svg')
+					span WhatsApp
+				a.messagers-links__link.messagers-links__link--tg.btn.btn-oval.btn-bordered.btn-brand.btn-ico
+					img.messagers-links__icon(src=icoSrc + 'tg.svg')
+					span Telegram
+
+		.contacts__block-form.contacts-form
+			h3.contacts__block-title.contacts-form__title Остались вропросы? !{'<br>'} Напишите и мы с вами свяжемся
+			+contactForm
+
