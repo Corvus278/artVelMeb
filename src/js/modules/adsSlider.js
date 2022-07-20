@@ -15,9 +15,17 @@ const adsSlider = new Swiper(".ads-slider", {
 		clickable: true,
 	},
 
+	spaceBetween: 14,
+
 	// Navigation arrows
 	navigation: {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
+	},
+
+	breakpoints: {
+		1024: {
+			spaceBetween: 25,
+		},
 	},
 });

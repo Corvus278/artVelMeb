@@ -2,10 +2,10 @@ mixin phoneNumber(number, white = false)
 	- const textColor = white ? 'color-white' : 'color-black'
 	- const unmasketNumber = number.replace(/[\(, \), \-,  ]/g, '')
 
-	.phone-num
+	.phone-num&attributes(attributes)
 		a.phone-num__link(href='tel:' + unmasketNumber)
 			if white
-				.phone-num__icon.color-white(src="./assets/icons/phone.svg")
+				.phone-num__icon.color-white(src=icoSrc + "phone.svg")
 					+phoneSvg
 			else
 				.phone-num__icon.color-brand

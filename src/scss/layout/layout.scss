@@ -6,11 +6,11 @@
 }
 
 .section {
-	padding: 27px 0;
+	padding: $section-padding 0;
 
-	&--main {
-		&-first {
-			padding-top: get-spacer(7);
-		}
-	}
+	// &--main {
+	// 	&-first {
+	// 		padding-top: get-spacer(7);
+	// 	}
+	// }
 }

@@ -1,1 +1,29 @@
-footer footer
+footer.footer
+	.footer__content
+		.footer__top
+			.container.footer__top-cont
+				img.footer__logo(src=imgSrc + 'logo-white.png')
+				.footer__block.footer__block--menu
+					h3.footer__block-title Меню
+					nav.footer__nav.footer-nav
+						ul.footer-nav__list
+							each item in ['Каталог', 'Доставка', 'Сертификат', 'Гарантии', 'Статьи', 'Оферта',]
+								li.footer-nav__item
+									a(href='')=item
+
+				.footer__block.footer__block--contacts
+					h3.footer__block-title Контакты
+					ul.footer__contacts.footer-contacts
+						li.footer-contacts__item
+							+phoneNumber('8 (925) 549-38-70', true)(class='footer-contacts__phone')
+						li.footer-contacts__item
+							+phoneNumber('8 (499) 391-20-73', true)(class='footer-contacts__phone')
+						li.footer-contacts__item
+							a.footer-contacts__mail
+								img.footer-contacts__mail-icon(src=icoSrc + 'mail.svg')
+								span mail@velesartmebel.ru
+
+		.footer__bottom
+			.container.footer__bottom-cont
+				span.footer__copyright 2014—2022 Торговый дом «Велес». Все права защищены
+				a.footer__policy.underline Политика конфиденциальности
