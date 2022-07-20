@@ -1,0 +1,10 @@
+@include media-breakpoint-down("tablet") {
+	.section {
+		padding-top: $section-padding-mobile;
+		padding-bottom: $section-padding-mobile;
+	}
+
+	.pt-mobile-section {
+		padding-top: $section-padding-mobile;
+	}
+}
